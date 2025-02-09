@@ -33,6 +33,7 @@ const items = reactive([
     class="home-swiper-wrapper"
     :interval="2000"
     :duration="300"
+    :navigation="{ showSlideBtn: 'never' }"
   >
     <t-swiper-item v-for="(imgUrl, index) in items" :key="index">
       <t-image :src="imgUrl" class="swiper-image" />
