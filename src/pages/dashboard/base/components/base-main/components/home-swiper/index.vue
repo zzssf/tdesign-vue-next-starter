@@ -43,13 +43,13 @@ const items = reactive([
     <template #navigation>
       <div class="thumbnail-container">
         <!-- 左箭头 -->
-        <div class="arrow left-arrow" @click="handlePrev"><t-icon name="chevron-left" /></div>
+        <div class="arrow" @click="handlePrev"><t-icon name="chevron-left" /></div>
 
         <!-- 当前缩略图 -->
         <div class="thumbnail-item"><t-image :src="items[currentIndex]" class="thumbnail-image" /></div>
 
         <!-- 右箭头 -->
-        <div class="arrow right-arrow" @click="handleNext"><t-icon name="chevron-right" /></div>
+        <div class="arrow" @click="handleNext"><t-icon name="chevron-right" /></div>
       </div>
     </template>
   </t-swiper>
@@ -95,7 +95,7 @@ const handleNext = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px; // 缩略图与箭头的间距
+    gap: 10px; // 缩略图与箭头的间距
     padding: 8px 0;
     background: rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -130,16 +130,6 @@ const handleNext = () => {
     &:hover {
       opacity: 0.8;
     }
-  }
-
-  // 左箭头
-  .left-arrow {
-    margin-right: 8px; // 调整左箭头与缩略图的间距
-  }
-
-  // 右箭头
-  .right-arrow {
-    margin-left: 8px; // 调整右箭头与缩略图的间距
   }
 }
 </style>
