@@ -1,18 +1,14 @@
 .home-swiper-wrapper{
-  height: 280px;
   background-color: aqua;
 
 
-  .home-swiper-item {
-    height: 100%; /* 确保每个滑动项的高度与父容器一致 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .home-image {
-      width: 100%; /* 图片宽度自适应 */
-      height: 100%; /* 图片高度自适应 */
-      object-fit: cover; /* 确保图片平铺且不会变形 */
+  .swiper-image {
+    ::v-deep .t-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
     }
   }
 }
+
+
