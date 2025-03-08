@@ -142,7 +142,6 @@ const rules: Record<string, FormRule[]> = {
   textInput: [
     {
       required: true,
-      validator: (val: string) => !!val?.trim(),
       message: '文本不能为空',
       type: 'error',
       trigger: 'change',
@@ -151,7 +150,6 @@ const rules: Record<string, FormRule[]> = {
   selectOption: [
     {
       required: true,
-      validator: (val: number | null) => val !== null && val !== undefined,
       message: '请选择下拉选项',
       type: 'error',
       trigger: 'change',
@@ -160,7 +158,6 @@ const rules: Record<string, FormRule[]> = {
   radioChoice: [
     {
       required: true,
-      validator: (val: number | null) => val !== null && val !== undefined,
       message: '请选择单选选项',
       type: 'error',
       trigger: 'change',
@@ -180,7 +177,7 @@ const validateAll = (): boolean => {
     const fields: (keyof TableItem)[] = ['textInput', 'selectOption', 'radioChoice'];
 
     for (const field of fields) {
-      const isValid = rules[field][0].validator(item[field]);
+      const isValid = item[field];
       if (!isValid) {
         firstError.value = {
           page: Math.floor(i / pageSize) + 1,
